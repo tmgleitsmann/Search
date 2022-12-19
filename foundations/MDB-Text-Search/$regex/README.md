@@ -4,12 +4,12 @@ If you have already completed the $text demo, we can re-use the cluster and inde
 ### 1. First thing we will want to do is create an Atlas Cluster
 Any config should do. I'll be building out a Single Region M10 on AWS.
 
-![Atlas Config]()
+![Atlas Config](/images/config1.png)
 
 ### 2. Let's load in some sample data
 While the sample data loads in be sure to configure network security and RBAC.
 
-![Load in sample data]()
+![Load in sample data](/images/dataload.png)
 
 ### 3. Create The Text Index on the `sample.mflix` namespace
 I will be using the shell in order to run the `createIndex` command
@@ -17,7 +17,7 @@ I will be using the shell in order to run the `createIndex` command
 
 This index allows us to search against both the fullplot and title fields of the movies collection. Matches for tokens against fullplot will be 2x more relevant than a default scored token and matches for tokens against title will be 5x more relevant. 
 
-![Creating the Index in Shell]()
+![Creating the Index in Shell](/images/textindex.png)
 
 ### 4. Querying against our Text Index
 Run the following command against the `movies` collection. Note that with `$regex` we are capable of matching against patterns and case-insensitivity, however we lose the ability to score our documents. 
@@ -25,4 +25,4 @@ Run the following command against the `movies` collection. Note that with `$rege
 
 You should get a handful of documents back, each beginning with the letters "bat" and then having 0 or more characters as the suffix. 
 
-![Search using $regex]()
+![Search using $regex](/images/regex.png)
