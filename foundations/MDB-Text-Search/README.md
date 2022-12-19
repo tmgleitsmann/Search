@@ -19,6 +19,6 @@ A MongoDB Text Index will tokenize and stem the content of the field that is bei
 
 ### $text and $regex for text searches
 - **$text** : The $text operator can search for words and phrases. Query matches on the complete stemmed words.
-  - [$text demo]()
+  - [$text demo](/foundations/MDB-Text-Search/$text)
 - **$regex** : The $regex operator can search for patterns and wildcard searches. It can be used with both regular indexes as well as text indexes. *This operator can be very CPU intensive and you lose the ability to score documents*.
-  - [$regex demo]()
+  - [$regex demo](/foundations/MDB-Text-Search/$regex)
