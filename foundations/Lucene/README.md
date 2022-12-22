@@ -97,11 +97,11 @@ Scorers will move up the tree until they are consolidated by a Collector object 
 ## CRUD Within Lucene
 What happens when creating, reading, updating and deleted documents from an inverted index?
 
--Insert/Update: The original document will be analyzed on the fields to be indexed in accordance with the `Lucene Mapping`. The document is then persisted within a segment that exists on an index. **Note: Segments are IMMUTABLE**. Whenever an update occurs, Lucene will retrieve the document, perform the update and then index the NEW document while [marking the previous document for deletion](https://www.elastic.co/blog/lucenes-handling-of-deleted-documents)?.
+- Insert/Update: The original document will be analyzed on the fields to be indexed in accordance with the `Lucene Mapping`. The document is then persisted within a segment that exists on an index. **Note: Segments are IMMUTABLE**. Whenever an update occurs, Lucene will retrieve the document, perform the update and then index the NEW document while [marking the previous document for deletion](https://www.elastic.co/blog/lucenes-handling-of-deleted-documents)?.
     
--Read: Client query will be passed through a query parser and then text analysis chain before being constructed into a QueryTree. The QueryTree will then be executed against the inverted index. Lucene will retrieve the documents hit as well as the corresponding scores constructed. 
+- Read: Client query will be passed through a query parser and then text analysis chain before being constructed into a QueryTree. The QueryTree will then be executed against the inverted index. Lucene will retrieve the documents hit as well as the corresponding scores constructed. 
     
- Delete: [Lucene will mark the document for deletion](https://www.elastic.co/blog/lucenes-handling-of-deleted-documents)?
+- Delete: [Lucene will mark the document for deletion](https://www.elastic.co/blog/lucenes-handling-of-deleted-documents)?
     
   - What is a Lucene Mapping?
     - A Lucene Mapping is the definition for the document structure and how it should be indexed.
