@@ -98,9 +98,16 @@ Scorers will move up the tree until they are consolidated by a Collector object 
 What happens when creating, reading, updating and deleted documents from an inverted index?
 
 -Insert/Update: The original document will be analyzed on the fields to be indexed in accordance with the `Lucene Mapping`. The document is then persisted within a segment that exists on an index. **Note: Segments are IMMUTABLE**. Whenever an update occurs, Lucene will retrieve the document, perform the update and then index the NEW document while [marking the previous document for deletion](https://www.elastic.co/blog/lucenes-handling-of-deleted-documents)?.
-
-[![Segment Merging](/images/Lucene/segmentMerge.png)](https://www.youtube.com/watch?v=YW0bOvLp72E)
-
+    
+-Read: Client query will be passed through a query parser and then text analysis chain before being constructed into a QueryTree. The QueryTree will then be executed against the inverted index. Lucene will retrieve the documents hit as well as the corresponding scores constructed. 
+    
+ Delete: [Lucene will mark the document for deletion](https://www.elastic.co/blog/lucenes-handling-of-deleted-documents)?
+    
   - What is a Lucene Mapping?
     - A Lucene Mapping is the definition for the document structure and how it should be indexed.
     - It can be considered the schema for indexing documents
+
+Since segments are immutable, how do we reclaim disk for data that is stale or marked for deletion? **Segmentation Merging** is the process of reclaiming bytes on disk that were previously occupied by documents marked for deletion. This is ultimately when a document in lucene will get deleted. 
+*Click on the thumbnail below to see a video on how segments merge while indexing.*
+
+[![Segment Merging](/images/Lucene/segmentMerge.png)](https://www.youtube.com/watch?v=YW0bOvLp72E)
