@@ -46,6 +46,10 @@ Once the token stream from the analysis chain is processed by the indexing chain
 - One or many segments can comprise an inverted index.
   - An inverted index is essentially a hash table data strcture that maps content to document location. This is traditionally the other way around, hence the term "inverted" index.
 
+*visualize the difference below*
+
+![](/images/Lucene/invertedIndex.png)
+
 ### Searching
 Against Lucene a user has the ability to search, filter, paginate and sort from a result set. This is done by breaking down Lucene search into subcomponents.
 - Query Model
