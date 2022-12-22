@@ -10,7 +10,7 @@ Lucene has four main components
 1. Analysis of Incoming Content and Queries
 2. Indexing and Storage
 3. Searching
-4. Ancillary Modules
+4. Ancillary Modules (will be exempting from documentation)
 
 Architecture Diagram
 
@@ -45,3 +45,62 @@ Once the token stream from the analysis chain is processed by the indexing chain
 - These segments are IMMUTABLE. This will be important later when covering CRUD and segmentation merging. 
 - One or many segments can comprise an inverted index.
   - An inverted index is essentially a hash table data strcture that maps content to document location. This is traditionally the other way around, hence the term "inverted" index.
+
+### Searching
+Against Lucene a user has the ability to search, filter, paginate and sort from a result set. This is done by breaking down Lucene search into subcomponents.
+- Query Model
+- Query Evaluation
+- Scoring
+- Search Extensions
+
+
+**Query Model**:
+Lucene does not enforce a query language, but instead uses query objects to perform searches. These objects are provided as building blocks to express complex queries and can be constructed programmatically or through the *query parser*
+
+The Query Types can be
+- Term Queries: Evaluate a single term in a specific field
+- Boolean Queries: A Query that matches documents matching boolean combinations of other queries. AND/OR/NOT evaluation
+- Proximity Queries: Finding words that are a specified distance away from each other
+- Position Based Queries: allow to express more complex rules for proximity and relative positions of terms
+- Wildcard: Implements the wildcard search query
+- Fuzzy Matching: Implements the fuzzy search query. The similarity measurement is based on the Damerau-Levenshtein (optimal string alignment) algorithm
+- Regex: A regular expression based query
+- Disjunction-Max Queries: A query that generates the union of documents produced by its subqueries, and that scores each document with the maximum score for that document as produced by any subquery, plus a tie breaking increment for any additional matching subqueries
+fields
+- etc.
+
+These queries allow for developers to express complex criteria for matching and scoring documents in a well strctured "tree" of query clauses. The QueryParser will typically parse a search into a query tree if the queries weren't generated and combined programatically already.
+
+The QueryTree is an object that represents complex query structures
+- Leaf nodes will be your terms
+- Edges will be your boolean operators (should, must, filter, etc)
+- Non-leaf nodes are the remainder of the boolean query
+
+A visual example can be found below
+![](/images/Lucene/queryTree.png)
+
+**Query Evaluation**:
+When a query is executed, each inverted index segment is processed sequentially and will generate a Scorer object. Scoreres typically score documents with a *document at a time* strategy but *term at a time* also exists. 
+
+Scorers will move up the tree until they are consolidated by a Collector object that consumes the scores and computes the results. For example, if we wanted to match the top 10 most relevant documents, our Collector will populate the documents within a priority queue of size 10, ranked by score. Collectors can also be used for faceting, grouping, and more. 
+
+**Query Evaluation**: The logic for scoring terms is implemented by the Similary Class in Lucene. Similarity will determine
+- Field normalization factors (weights)
+  - Depends on field length
+  - Depends on user-specified field boosts
+- Calculate a score from the scoring model - Some normalization of TD-IDF
+  - BM25 (Lucene 4)
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+## CRUD Within Lucene
+What happens when creating, reading, updating and deleted documents from an inverted index?
+
+-Insert/Update: The original document will be analyzed on the fields to be indexed in accordance with the `Lucene Mapping`. The document is then persisted within a segment that exists on an index. **Note: Segments are IMMUTABLE**. Whenever an update occurs, Lucene will retrieve the document, perform the update and then index the NEW document while [marking the previous document for deletion](https://www.elastic.co/blog/lucenes-handling-of-deleted-documents)?.
+
+[![Segment Merging](/images/Lucene/segmentMerge.png)](https://www.youtube.com/watch?v=YW0bOvLp72E)
+
+  - What is a Lucene Mapping?
+    - A Lucene Mapping is the definition for the document structure and how it should be indexed.
+    - It can be considered the schema for indexing documents
