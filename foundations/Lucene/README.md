@@ -26,7 +26,7 @@ The first section of the diagram that documents and queries get routed to is the
 The output of the analysis chain will be a token stream that flows into an index writer. This is where our "tokens" will be "inverted" and stored on segments in memory.
 
 ### Index and Storage
-Documents that get passed into Lucene are remodeled to be a flat, ordered list of fields with content. 
+Documents that get passed into Lucene are remodeled to be a flat, ordered list of fields with content. Fields will have the follow attributed to them:
 - Name 
 - Content Data
 - Float Weight (used for scoring)
