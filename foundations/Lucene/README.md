@@ -93,7 +93,7 @@ When a query is executed, each inverted index segment is processed sequentially 
 
 Scorers will move up the tree until they are consolidated by a Collector object that consumes the scores and computes the results. For example, if we wanted to match the top 10 most relevant documents, our Collector will populate the documents within a priority queue of size 10, ranked by score. Collectors can also be used for faceting, grouping, and more. 
 
-**Query Evaluation**: The logic for scoring terms is implemented by the Similary Class in Lucene. Similarity will determine
+**Similarity**: The logic for scoring terms is implemented by the Similary Class in Lucene. Similarity will determine
 - Field normalization factors (weights)
   - Depends on field length
   - Depends on user-specified field boosts
