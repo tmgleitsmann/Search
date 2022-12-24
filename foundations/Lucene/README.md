@@ -42,6 +42,11 @@ Lucene has two broad categories of fields that are not mutually exclusive.
   - You can think of stored-source as caching other fields of a document alongside the index to have the same benefits as a covered query in MongoDB. 
 
 Once the token stream from the analysis chain is processed by the indexing chain where it gets inverted, it then gets stored within an in-memory "segment".
+
+*Indexing Process Visualized*
+
+![](/images/Lucene/IndexingProcess.png)
+
 - These segments are IMMUTABLE. This will be important later when covering CRUD and segmentation merging. 
 - One or many segments can comprise an inverted index.
   - An inverted index is essentially a hash table data strcture that maps content to document location. This is traditionally the other way around, hence the term "inverted" index.
