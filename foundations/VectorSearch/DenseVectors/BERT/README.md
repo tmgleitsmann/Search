@@ -48,6 +48,10 @@ This flow might have left you with quite a few questions.
   - example: `embeddings` => `em`, `##bed`, `##ding`, `##s`.
   - You can use and reuse these tokens to represent words across the corpus. 
 
+Example of context dependence
+
+![](/images/BERT/context.png)
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 *Additional Resources*
 - [Explain BERT to me like I'm 5 video](https://www.youtube.com/watch?v=xI0HHN5XKDo)
