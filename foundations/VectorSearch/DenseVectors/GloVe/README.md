@@ -1,4 +1,4 @@
-## GloVe
+## [GloVe](https://nlp.stanford.edu/pubs/glove.pdf)
 
 GloVe (Global Vectors) is very similar to Word2Vec in the sense that you’re provided with context-independent embeddings. However, the means of getting these embeddings 
 is different. In Word2Vec, we were only considering the local context of the dataset, as described with CBOW and Skip Gram. 
