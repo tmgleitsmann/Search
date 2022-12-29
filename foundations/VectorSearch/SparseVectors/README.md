@@ -34,6 +34,8 @@ The sparse vector denoted from the table above can help us understand semantic r
 
 Check out this [exercise](https://github.com/esteininger/vector-search/blob/master/foundations/sparse-vector-tutorial/Sparse%20Vector%20Tutorial.ipynb) Ethan Steininger put together for constructing your own Sparse Vectors, effectively building a feature extraction engine (using the bag-of-words approach) that stores tokens as 1's and 0's to then become searchable.
 
+-------------------------------------------------------------------------------------------------------------------------------------
+
 ### The Drawbacks to Sparse Vectors
 - Very large vectors require a lot of memory, and some very large vectors that we wish to work with are sparse. Most of the information, since it’s 0s, is useless.
 - Performing any sort of computations on these vectors is wasteful because most of the arithmetic operations devoted to solving a set of equations or inverting the vectors involve zero operands.
