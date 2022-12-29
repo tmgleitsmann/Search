@@ -26,7 +26,7 @@ Earlier in the Sparse Vector section I listed off a few machine learning models 
 
 | # | Label                                                       | Description |
 |:--|:------------------------------------------------------------|:-----------|
-| 1 | [Word2Vec](foundations/VectorSearch/DenseVectors/Word2Vec)  | High level overview of the Word2Vec neural network model |
-| 2 | [GloVe](foundations/VectorSearch/DenseVectors/GloVe)     | High level overview of the GloVe neural network model|
-| 3 | [BERT](foundations/VectorSearch/DenseVectors/BERT)     | High level overview of the BERT neural network model |
+| 1 | [Word2Vec](Word2Vec)  | High level overview of the Word2Vec neural network model |
+| 2 | [GloVe](GloVe)     | High level overview of the GloVe neural network model|
+| 3 | [BERT](BERT)     | High level overview of the BERT neural network model |
 
