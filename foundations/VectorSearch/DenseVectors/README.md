@@ -18,6 +18,10 @@ A more accurate way of representing vectors as an output of this algorithm that 
 | Shark     | .8   | .99 | .3   | .2        |
 | Lightning | .01  | .01 | .99  | .01       |
 
+Where values closer to 1 correlate to tigther relationships between the token and the feature and values closer to 0 correlate to the opposite.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
 Earlier in the Sparse Vector section I listed off a few machine learning models (neural networks) that can provide much more descriptive vectors than the Bag of Words model we covered. These models are more descriptive in that they produce dense vectors as outputs through *feature learning* during the neural network training process. We can learn a little more about those machine learning models below.
 
 | # | Label                                                       | Description |
@@ -26,4 +30,3 @@ Earlier in the Sparse Vector section I listed off a few machine learning models 
 | 2 | [GloVe](foundations/VectorSearch/GloVe)     | High level overview of the GloVe neural network model|
 | 3 | [BERT](foundations/VectorSearch/BERT)     | High level overview of the BERT neural network model |
 
--------------------------------------------------------------------------------------------------------------------------------------
