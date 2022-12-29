@@ -45,10 +45,12 @@ By being able to maniuplate these incredibly sophisticated vectors, we can build
  
  ### Word2Vec comes in two different architecture (models)
  
+ ![](/images/Word2Vec/models.png)
+ 
 - Continuous Bag of Words: A model architecture that predicts the `focus word` given `context` as input.
   - The idea is to determine the context as vectors and them sum them to determine the focus word
+![](/images/Word2Vec/CBOW.png)
 - Skip Gram (also reffered to as Skip N-Gram): A model architecture that predicts the  `context` given a `focus word`
   - This is the inverse of Continuous Bag of Words. You take a focus word to try and predict context words one-by-one. 
-  
-![](/images/Lucene/architecture.png)
+![](/images/Word2Vec/SkipGram.png)
 
