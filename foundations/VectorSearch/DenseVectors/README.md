@@ -54,3 +54,31 @@ By being able to maniuplate these incredibly sophisticated vectors, we can build
   - This is the inverse of Continuous Bag of Words. You take a focus word to try and predict context words one-by-one. 
 ![](/images/Word2Vec/SkipGram.png)
 
+-------------------------------------------------------------------------------------------------------------------------------------
+
+### [How does Word2Vec Work?](https://www.youtube.com/watch?v=QyrUentbkvw)
+
+*I highly encourage watching this video, regardless of if you are grasping the concepts behind Word2Vec or not*
+
+We’ve established the ideas of focus words and context words. The semantics of these matrices will need to be learned by a machine learning model. So what needs to be created is an algorithm that predicts the probability of a focus word given context words (for CBOW) or predicting context words given a focus word (for Skip Gram).
+
+We won’t go through the algorithms that actually need to be learned here, but these can be modeled as logistical regression equations. This allows us to build a machine learning model that can learn to predict a focus word given context words or context words given a focus word. 
+
+> **NOTE:** When learning, we don’t take the entire context, whether that be a sentence, paragraph, or document. We take a context window that we can define to be a fixed length. This will be a moving window. Typically the window will denote the number of words before and after your target word, but there are scenarios in which the window denotes every word, including the target word like below. 
+- example: There lived a king called Ashoka in India.
+ - window = 3 : lived, a → there | [There <-- focus word] [lived a <-- context words] king called Ashoka in India
+ - window = 3 : a, king → lived | There [lived <-- a king] [lived a <-- context words] called Ashoka in India
+ - etc.
+ 
+ -------------------------------------------------------------------------------------------------------------------------------------
+ 
+### Word2Vec Exercie
+ [Exercise](): Lets train our own Word2Vec model against the Amazon Product Reviews dataset and then measure the similarity between like vectors
+ 
+ -------------------------------------------------------------------------------------------------------------------------------------
+
+### The Major Drawback of Word2Vec
+
+- Only generates fixed embedding vector: Problematic for words that have more than one meaning. Word2Vec struggles to generate contextualized meaning of a word
+
+  > Ie. bank ⇒ bank for money, bank for basketball shot, bank for area by a river.
