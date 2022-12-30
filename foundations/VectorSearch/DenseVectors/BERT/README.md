@@ -40,6 +40,12 @@ This flow might have left you with quite a few questions.
 2.  What determines the BERT output vector size?
     - The number of hidden units (aka neurons or features) within BERT is 768 and cannot be modified without retraining the model. 
 4.  What's the responsibility of the feed forward neural network that produces our logits?
+    - The Vector output from BERT can do a lot more than just guessing tokens. It has provided context to the vectors but it hasn't done anything with that information yet. A feedforward neural network can take that 768 sized vector and make decisions upon it such as
+        - Guessing whether the sequence is spam or not spam
+        - Guessing whether the sequence is factual or not factual
+        - Guessing the masked word(s)
+        - Sentiment Analysis
+        - etc.
     - Feed Forward neural network helps a lot in finding the more contextual information related to particular pairs of words in sequences. It's meant to improve the accuracy of the overall model. [You can learn more about the feed forward network's responsibility in this video here.](https://www.youtube.com/watch?v=YIEe7d7YqaU)
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------
