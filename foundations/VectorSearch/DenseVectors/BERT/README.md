@@ -28,10 +28,13 @@ This flow might have left you with quite a few questions.
     - Masked Language Model 
       - The purpose of the Masked Language Model is to, simply put, teach a model to understand `what is language` and `what is context`. 
       - The user provides BERT an input sequence of tokens and masks ~15% of the words to then allow for BERT to learn and predict the correct output sequence by learning the semantics behind the sequence. 
+      -BERT will also need to understsand relationships across sentences as well which can be done using Next Sentence Prediction (see below)
 
     - Next Sentence Prediction
-      - Bert can also predict sentences given context. BERT can take in two sentences and determine whether the second sentence follows the first or not (binary classification). 
-      - This allow sfor BERT to better understand context across multiple sequences of tokens rather than just one sequence of tokens.
+      - Many important downstream tasks such as Question Answering (QA) and Natural Language Inference (NLI) are based on understanding the relationship between two sentences, which is not directly captured by language modeling
+      - Bert can predict sentences given context. BERT can take in two sentences and determine whether the second sentence follows the first or not (binary classification). 
+      - This allows for BERT to better understand context across multiple sequences of tokens rather than just one sequence of tokens.
+      - This also allows for BERT to do next sentence prediction tasks that can be trivially generated from any monolingual corpus
     
     
 2.  What determines the BERT output vector size?
