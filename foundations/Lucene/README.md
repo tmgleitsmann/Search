@@ -121,27 +121,3 @@ Since segments are immutable, how do we reclaim disk for data that is stale or m
 
 [![Segment Merging](/images/Lucene/segmentMerge.png)](https://www.youtube.com/watch?v=YW0bOvLp72E)
 
-
------------------------------------------------------------------------------------------------------------------------------------------
-
-## Search Foundations / Features
-
-| # | Label                                                       | Description |
-|:--|:------------------------------------------------------------|:-----------|
-| 1 | [Basic Text Search](foundations/)     | How does text search work today using text indexes and $text/ $regex in MongoDB? |
-| 2 | [Fuzzy Text Search](foundations/)     | How can we make our text indexes smarter and more efficient?|
-| 3 | [Highlighting](foundations/)          | How does Atlas Search provide full text search capabilities? |
-| 4 | [Autocomplete](foundations/)          | What is Vector Search and how does it improve on Full Text Search? |
-| 5 | [Keyword](foundations/)               | What is Vector Search and how does it improve on Full Text Search? |
-| 6 | [Phrase](foundations/)          | What is Vector Search and how does it improve on Full Text Search? |
-| 7 | [Diacritics](foundations/)          | What is Vector Search and how does it improve on Full Text Search? |
-| 8 | [Compound](foundations/)          | What is Vector Search and how does it improve on Full Text Search? |
-| 9 | [Explain](foundations/)          | What is Vector Search and how does it improve on Full Text Search? |
-| 10| [Custom Scoring](foundations/)          | What is Vector Search and how does it improve on Full Text Search? |
-| 11| [Faceting](foundations/)          | What is Vector Search and how does it improve on Full Text Search? |
-| 12| [Synonyms](foundations/)          | What is Vector Search and how does it improve on Full Text Search? |
-| 13| [Custom Scoring](foundations/)          | What is Vector Search and how does it improve on Full Text Search? |
-| 14| [Sorting and Pagination](foundations/)          | What is Vector Search and how does it improve on Full Text Search? |
-| 15| [Cross-Collection Search](foundations/)          | What is Vector Search and how does it improve on Full Text Search? |
-| 16| [Custom Analyzers](foundations/)          | What is Vector Search and how does it improve on Full Text Search? |
-| 17| [Flexible Querying / Index Intersection](foundations/)          | What is Vector Search and how does it improve on Full Text Search? |
