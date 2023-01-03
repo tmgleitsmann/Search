@@ -31,6 +31,8 @@ Once the index is initial constructed, a change stream will be constructed again
 -----------------------------------------------------------------------------------------------------------------------------------------
 ## Query Lifecycle
 
+When the client sends a full text search query it will immediately get routed to the mongod process. This process will then recognize that the first stage of the aggregation is a `$search` stage and pass it along to the `mongot` process (referred to as ASM above). The mongot process will convert our `$search` stage into a Lucene query and retrieve the ObjectIDs of the documents Lucene deems relevant from the inverted index before passing them back to the mongod process. The `mongod` process then has to do the ObjectID lookup operations to retrieve the docuements from disk. 
+
 ![](/images/AtlasSearch/querylifecycle.png)
 
 -----------------------------------------------------------------------------------------------------------------------------------------
