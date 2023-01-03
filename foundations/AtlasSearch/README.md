@@ -41,20 +41,19 @@ When the client sends a full text search query it will immediately get routed to
 
 | # | Label                                                       | Description |
 |:--|:------------------------------------------------------------|:-----------|
-| 1 | [Basic Text Search](foundations/)     | How does text search work today using text indexes and $text/ $regex in MongoDB? |
-| 2 | [Fuzzy Text Search](foundations/)     | How can we make our text indexes smarter and more efficient?|
-| 3 | [Highlighting](foundations/)          | How does Atlas Search provide full text search capabilities? |
-| 4 | [Autocomplete](foundations/)          | What is Vector Search and how does it improve on Full Text Search? |
-| 5 | [Keyword](foundations/)               | What is Vector Search and how does it improve on Full Text Search? |
-| 6 | [Phrase](foundations/)          | What is Vector Search and how does it improve on Full Text Search? |
-| 7 | [Diacritics](foundations/)          | What is Vector Search and how does it improve on Full Text Search? |
-| 8 | [Compound](foundations/)          | What is Vector Search and how does it improve on Full Text Search? |
-| 9 | [Explain](foundations/)          | What is Vector Search and how does it improve on Full Text Search? |
-| 10| [Custom Scoring](foundations/)          | What is Vector Search and how does it improve on Full Text Search? |
-| 11| [Faceting](foundations/)          | What is Vector Search and how does it improve on Full Text Search? |
-| 12| [Synonyms](foundations/)          | What is Vector Search and how does it improve on Full Text Search? |
-| 13| [Custom Scoring](foundations/)          | What is Vector Search and how does it improve on Full Text Search? |
-| 14| [Sorting and Pagination](foundations/)          | What is Vector Search and how does it improve on Full Text Search? |
-| 15| [Cross-Collection Search](foundations/)          | What is Vector Search and how does it improve on Full Text Search? |
-| 16| [Custom Analyzers](foundations/)          | What is Vector Search and how does it improve on Full Text Search? |
-| 17| [Flexible Querying / Index Intersection](foundations/)          | What is Vector Search and how does it improve on Full Text Search? |
+| 1 | [Basic Text Search](foundations/)     | Run the default full text search |
+| 2 | [Fuzzy Text Search](foundations/)     | Run text search that can handle `n` amounts of character mispellings|
+| 3 | [Highlighting](foundations/)          | Highlight the tokens matched during the search |
+| 4 | [Autocomplete](foundations/)          | Run real time text inference of token(s) |
+| 5 | [Keyword](foundations/)               | Run exact, case-senstive searches of tokens |
+| 6 | [Phrase](foundations/)          | Run searches over ordered sequence of tokens |
+| 7 | [Diacritics](foundations/)          | Run diacritic sensitive or insensitive queries |
+| 8 | [Compound](foundations/)          | Run a search that combines two or more operators into a single query (or clause) |
+| 9 | [Explain](foundations/)          | Understand how the mongot (lucene) returns results in order to tune performance |
+| 10| [Custom Scoring](foundations/)          | Implement custom relevance weights where some fields more important than other fields |
+| 11| [Faceting](foundations/)          | Dynamically cluster search results into categories |
+| 12| [Synonyms](foundations/)          | Search not just for matching tokens, but also for statically mapped tokens (token synonyms) |
+| 13| [Sorting and Pagination](foundations/)          | Tips and tricks to sort or paginate over a result set quicly |
+| 14| [Cross-Collection Search](foundations/)          | Run text search that spans across multiple collections |
+| 15| [Custom Analyzers](foundations/)          | Build out a customer analyzer rather than selecting one of the default Lucene ones |
+| 16| [Flexible Querying / Index Intersection](foundations/)          | Combine multiple search indexes to perform performant and dynamic queries |
