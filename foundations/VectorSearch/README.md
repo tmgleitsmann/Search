@@ -11,8 +11,14 @@ Vector Search is important for the same reason full text search is important. It
 Vector search engines use distance between embeddings to represent similarity. The problem for searching for related content, mathematically, turns into a search for the nearest neighbors of your query. 
 
 Given the diagram below you can see that we transform our unstructured data on the left into vector representation. At query time, we transform our query into a vector representation and determine what data is most similar to the query by measuring the distance bewtween the vectors. 
+
 ![](/images/VectorSearch/HL-Vector-Diagram.png)
 
+If documents are alike, their vectors will be similar. Nearest neighbor algorithms like euclidean distance, cosine similarity, dot product, etc. can all be used to efficiently calcuate the distances between the query vector and the result set vectors to generate similarity scores. 
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+There are a couple different ways these vectors can be represented. Check out the table below for descriptions of what a Sparse Vector is and what a Dense Vector is. 
 
 | # | Label                                                       | Description |
 |:--|:------------------------------------------------------------|:-----------|
