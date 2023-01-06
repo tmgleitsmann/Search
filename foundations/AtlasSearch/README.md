@@ -41,19 +41,20 @@ When the client sends a full text search query it will immediately get routed to
 
 | # | Label                                                       | Description |
 |:--|:------------------------------------------------------------|:-----------|
-| 1 | [Basic Text Search](foundations/)     | Run the default full text search |
-| 2 | [Fuzzy Text Search](foundations/)     | Run text search that can handle `n` amounts of character mispellings|
-| 3 | [Highlighting](foundations/)          | Highlight the tokens matched during the search |
-| 4 | [Autocomplete](foundations/)          | Run real time text inference of token(s) |
-| 5 | [Keyword](foundations/)               | Run exact, case-senstive searches of tokens |
-| 6 | [Phrase](foundations/)          | Run searches over ordered sequence of tokens |
-| 7 | [Diacritics](foundations/)          | Run diacritic sensitive or insensitive queries |
-| 8 | [Compound](foundations/)          | Run a search that combines two or more operators into a single query (or clause) |
-| 9 | [Explain](foundations/)          | Understand how the mongot (lucene) returns results in order to tune performance |
-| 10| [Custom Scoring](foundations/)          | Implement custom relevance weights where some fields more important than other fields |
-| 11| [Faceting](foundations/)          | Dynamically cluster search results into categories |
-| 12| [Synonyms](foundations/)          | Search not just for matching tokens, but also for statically mapped tokens (token synonyms) |
-| 13| [Sorting and Pagination](foundations/)          | Tips and tricks to sort or paginate over a result set quicly |
-| 14| [Cross-Collection Search](foundations/)          | Run text search that spans across multiple collections |
-| 15| [Custom Analyzers](foundations/)          | Build out a customer analyzer rather than selecting one of the default Lucene ones |
-| 16| [Flexible Querying / Index Intersection](foundations/)          | Combine multiple search indexes to perform performant and dynamic queries |
+| 1 | [Building a Search Engine]()          | Build a Python Search Engine in Code|
+| 2 | [Basic Text Search](foundations/)     | Run the default full text search |
+| 3 | [Fuzzy Text Search](foundations/)     | Run text search that can handle `n` amounts of character mispellings|
+| 4 | [Highlighting](foundations/)          | Highlight the tokens matched during the search |
+| 5 | [Autocomplete](foundations/)          | Run real time text inference of token(s) |
+| 6 | [Keyword](foundations/)               | Run exact, case-senstive searches of tokens |
+| 7 | [Phrase](foundations/)          | Run searches over ordered sequence of tokens |
+| 8 | [Diacritics](foundations/)          | Run diacritic sensitive or insensitive queries |
+| 9 | [Compound](foundations/)          | Run a search that combines two or more operators into a single query (or clause) |
+| 10 | [Explain](foundations/)          | Understand how the mongot (lucene) returns results in order to tune performance |
+| 11| [Custom Scoring](foundations/)          | Implement custom relevance weights where some fields more important than other fields |
+| 12| [Faceting](foundations/)          | Dynamically cluster search results into categories |
+| 13| [Synonyms](foundations/)          | Search not just for matching tokens, but also for statically mapped tokens (token synonyms) |
+| 14| [Sorting and Pagination](foundations/)          | Tips and tricks to sort or paginate over a result set quicly |
+| 15| [Cross-Collection Search](foundations/)          | Run text search that spans across multiple collections |
+| 16| [Custom Analyzers](foundations/)          | Build out a customer analyzer rather than selecting one of the default Lucene ones |
+| 17| [Flexible Querying / Index Intersection](foundations/)          | Combine multiple search indexes to perform performant and dynamic queries |
