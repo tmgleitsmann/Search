@@ -20,5 +20,5 @@ MongoDB Atlas Search can satisfy a variety of different Search Use Cases. Ones t
 | 1 | [MongoDB Atlas Player Search](https://www.atlassearchsoccer.com/)  | [Github](https://github.com/mongodb-developer/atlas-search-soccer)| Demonstrate how using Full Text Search, Fuzzy Matching, Autocomplete and Faceting can bring complicated player names closer to your end user |
 | 2 | [MongoRX](https://mongorx.mside.app/#/dashboard)  | [Github](https://github.com/mongodb-developer/MongoRx)| Combining Atlas Search with App Services, Charts and cloud ecosystem services to build a data discovery & exploration application around medical trials and drugs|
 | 3 | [MongoDB Atlas Restaurant Finder](http://atlassearchrestaurants.com/)  | [Github](https://github.com/mongodb-developer/WhatsCooking)   | Demonstrate Full Text Search and Faceting to query against geo-data |
-
+| 4 | Video Vector Search | [Github](https://github.com/wbleonard/atlas-vector-search-video/tree/main) | Prototype of how Atlas Vector Search could be used to find videos with relevant content - requiring that no descriptive metadata be stored along with the videos. |
 
