@@ -8,6 +8,10 @@ Vector Search is a means to search over unstructured data, whether that be text 
 Vector Search is important for the same reason full text search is important. It allows us to enahnce an end-user's experience by bringing the data they are searching for closer to them. Reflect on how many times you've needed to search for something you didn't quite know the word of, but you knew it was a mammal with wings, nocturnal and made a "hoot" sound. Without typing in the keywords "bird" or "owl" you may still have hard time finding relevant search results. Vector search overcomes this limitation, allowing you to search by what you mean. It can quickly deliver answers to queries based on context.
 
 ## How does this work? 
+Vector search engines use distance between embeddings to represent similarity. The problem for searching for related content, mathematically, turns into a search for the nearest neighbors of your query. 
+
+Given the diagram below you can see that we transform our unstructured data on the left into vector representation. At query time, we transform our query into a vector representation and determine what data is most similar to the query by measuring the distance bewtween the vectors. 
+[](/images/VectorSearch/HL-Vector-Diagram.png)
 
 
 | # | Label                                                       | Description |
