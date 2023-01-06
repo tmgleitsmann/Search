@@ -15,8 +15,10 @@ The purpose behind this repository is to teach everything a Solutions Architect 
 ## Demos
 MongoDB Atlas Search can satisfy a variety of different Search Use Cases. Ones that are quickly and easily demo-able you can find below
 
-| # | Demo                                                       | Description |
-|:--|:------------------------------------------------------------|:-----------|
-| 1 | [MongoDB Atlas Player Search](/)  | Demonstrate how using Full Text Search, Fuzzy Matching, Autocomplete and Faceting can bring complicated player names closer to your end user |
-| 2 | [MongoRX](https://github.com/mongodb-developer/MongoRx/tree/main/data)     | Combining Atlas Search with App Services, Charts and cloud ecosystem services to build a data discovery & exploration application around medical trials and drugs|
-| 3 | [MongoDB Atlas Restaurant Finder](http://atlassearchrestaurants.com/)     | Demonstrate Full Text Search and Faceting to query against geo-data |
+| # | Demo                                         | Repo         | Description |
+|:--|:---------------------------------------------|:-------------|:-----------|
+| 1 | [MongoDB Atlas Player Search](https://www.atlassearchsoccer.com/)  | [Github](https://github.com/mongodb-developer/atlas-search-soccer)| Demonstrate how using Full Text Search, Fuzzy Matching, Autocomplete and Faceting can bring complicated player names closer to your end user |
+| 2 | [MongoRX](https://mongorx.mside.app/#/dashboard)  | [Github](https://github.com/mongodb-developer/MongoRx)| Combining Atlas Search with App Services, Charts and cloud ecosystem services to build a data discovery & exploration application around medical trials and drugs|
+| 3 | [MongoDB Atlas Restaurant Finder](http://atlassearchrestaurants.com/)  | [Github](https://github.com/mongodb-developer/WhatsCooking)   | Demonstrate Full Text Search and Faceting to query against geo-data |
+
+
