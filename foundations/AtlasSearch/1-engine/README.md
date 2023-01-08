@@ -76,3 +76,6 @@ def inverse_document_frequency(documents, token):
   
 ```
 
+## Source
+https://bart.degoe.de/building-a-full-text-search-engine-150-lines-of-code/
+
