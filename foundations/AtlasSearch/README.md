@@ -42,8 +42,8 @@ When the client sends a full text search query it will immediately get routed to
 | # | Label                                                       | Description |
 |:--|:------------------------------------------------------------|:-----------|
 | 1 | [Building a Search Engine](1-engine)          | Build a Python Search Engine in Code|
-| 2 | [Basic Text Search](foundations/)     | Run the default full text search |
-| 3 | [Fuzzy Text Search](foundations/)     | Run text search that can handle `n` amounts of character mispellings|
+| 2 | [Basic Text Search](2-basic/)     | Run the default full text search |
+| 3 | [Fuzzy Text Search](3-fuzzy/)     | Run text search that can handle `n` amounts of character mispellings|
 | 4 | [Highlighting](foundations/)          | Highlight the tokens matched during the search |
 | 5 | [Autocomplete](foundations/)          | Run real time text inference of token(s) |
 | 6 | [Keyword](foundations/)               | Run exact, case-senstive searches of tokens |
