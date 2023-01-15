@@ -83,4 +83,11 @@ We will also be including the `highlight` operator within the `$search` stage to
 
 You can inspect the result set and see that they come pre-sorted by search relevance. You can further inspect the highlight array field to see which tokens influenced the score. 
 
+<img src="/images/AtlasSearch/2-basic/hits.png" style="height: 40%; width:40%;"/>
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Reflection
+
+Up to this point in the repository we have gotten our hands dirty building  our very own, custom full text search engine in Python as well as standing up a competitor full text search engine (ElasticSearch, Solr, etc.). One of MongoDB Atlas Search's greatest strengths is how much of the process it abstracts out for developers, allowing them to dive straight into application development rather than dealing with tedious plumbing and infrastructure challenges. 
+
