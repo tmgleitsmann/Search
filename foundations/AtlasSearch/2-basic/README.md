@@ -1,6 +1,8 @@
-# Build Basic Full Text Search in MongoDB Atlas
+# Build Basic Full Text Search in MongoDB Atlas w/ Highlighting
 
 This demo will show how to get started with taking advantage of the fully managed MongoDB Atlas Search capabilities.
+
+NOTE: This will also show ***highlighting***.
 
 The steps are as follows:
 1. Configure the Cluster. This includes setting up network and RBAC as well as loading in sample data
