@@ -67,19 +67,17 @@ We could update our existing default index defintion from earlier exercises, but
   
     Let's type in `bat` and see what comes up. 
   
-      ```json
+     ```json
       {
         "$search":{
-          {
-            "index": "autocomplete",
-            "autocomplete": {
-              "query": "bat",
-              "path": "title"
-            }
+          "index": "autocomplete",
+          "autocomplete": {
+            "query": "bat",
+            "path": "title"
           }
         }
       }
-      ```
+     ```
   
     <img src="/images/AtlasSearch/5-autocomplete/searchStage.png" style="height: 40%; width:40%;"/>
   
@@ -107,15 +105,13 @@ We could update our existing default index defintion from earlier exercises, but
 ***NOTE***: If you want to see the result set change, revisit the `$search` aggregation and add in an m at the end of the query to get `batm`. This will narrow down your result set even further, returning **ONLY** movies about batman.
   
 ```json
-{
-  "$search":{
-    {
-      "index": "autocomplete",
-      "autocomplete": {
-        "query": "batm",
-        "path": "title"
-      }
-    }
-  }
-}
+ {
+   "$search":{
+     "index": "autocomplete",
+     "autocomplete": {
+       "query": "bat",
+       "path": "title"
+     }
+   }
+ }
 ```
