@@ -9,5 +9,7 @@ This could be:
 
 Anything where instead of multiple tokens, we'll want to query for an individual token, without alteration.
 
-> quick brown fox jumped over the lazy dog` would tokenize to `[The quick brown fox jumped over the lazy dog]` rather than traditionally `[quick, brown, fox, jump, over, laz, dog]`
+> Example: `The quick brown fox jumped over the lazy dog` would tokenize to `[The quick brown fox jumped over the lazy dog]` rather than traditionally `[quick, brown, fox, jump, over, laz, dog]`
+
+**NOTE: The Keyword Analyzer does support case-insensitive search as it does not apply a lowercase token filter.**
 
