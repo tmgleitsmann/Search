@@ -45,7 +45,7 @@ When the client sends a full text search query it will immediately get routed to
 | 2 | [Basic Text Search](2-basic/)     | Run the default full text search |
 | 3 | [Fuzzy Text Search](3-fuzzy/)     | Run text search that can handle `n` amounts of character mispellings|
 | 4 | [Highlighting](2-basic/)          | Highlight the tokens matched during the search |
-| 5 | [Autocomplete](foundations/)          | Run real time text inference of token(s) |
+| 5 | [Autocomplete](2-autocomplete/)          | Run real time text inference of token(s) |
 | 6 | [Keyword](foundations/)               | Run exact, case-senstive searches of tokens |
 | 7 | [Phrase](foundations/)          | Run searches over ordered sequence of tokens |
 | 8 | [Diacritics](foundations/)          | Run diacritic sensitive or insensitive queries |
