@@ -20,11 +20,11 @@ Continuing to work off of the cluster we've already built with the dataset we've
 
 1. Create a new index on the `sample_mflix.movies` namespace titled `keyword`. 
 
-      <img src="/images/AtlasSearch/5-autocomplete/namespace.png" style="height: 40%; width:40%;"/>
+      <img src="/images/AtlasSearch/6-keyword/index-config1.png" style="height: 40%; width:40%;"/>
       
 2. Refine the index. We will want to get a bit more granular than accepting the default `dynamic` index settings provided by Atlas out of the box. Plus, we'll want to utilize the keyword lucene analyzer rather than the default.
 
-      <img src="/images/AtlasSearch/5-autocomplete/field-mappings.png" style="height: 70%; width:70%;"/>
+      <img src="/images/AtlasSearch/6-keyword/refine1.png" style="height: 70%; width:70%;"/>
       
 3. Modify the field mapping definition to be of type `string` against the `cast` field. Since this field is a string, we can turn off the dynamic toggle.
   - Change the index and search analyzer to `keyword`
@@ -36,7 +36,7 @@ Continuing to work off of the cluster we've already built with the dataset we've
   - Store: `false` --> lucene allows you to store the exact document's text as well as what's analyzed. Since the `keyword analyzer` doesn't change the           text, this would be redundant to have set as true. 
   - Norms: `false` --> String that specifies whether to include or omit the field length in the result when scoring. The field length is used as a               tiebreaker in the case that documents have matching scores. The shorter field length will return first.
   
-      <img src="/images/AtlasSearch/5-autocomplete/field-mappings.png" style="height: 70%; width:70%;"/>
+      <img src="/images/AtlasSearch/6-keyword/field-mappings2.png" style="height: 50%; width:50%;"/>
   
 ### Creating the Keyword Aggregation
 
@@ -57,7 +57,7 @@ Continuing to work off of the cluster we've already built with the dataset we've
       }
      ```
       
-      <img src="/images/AtlasSearch/5-autocomplete/searchStage.png" style="height: 40%; width:40%;"/>
+      <img src="/images/AtlasSearch/6-keyword/searchStage.png" style="height: 40%; width:40%;"/>
       
 2. The next stage we'll use is `$project` to cleanup our payload. 
 
@@ -74,11 +74,11 @@ Continuing to work off of the cluster we've already built with the dataset we've
     ```
     
     
-    <img src="/images/AtlasSearch/5-autocomplete/projectStage.png" style="height: 40%; width:40%;"/>
+    <img src="/images/AtlasSearch/6-keyword/projectStage.png" style="height: 40%; width:40%;"/>
   
     Here you'll see we are matching for movies with Chris Pratt. 
     
-    <img src="/images/AtlasSearch/5-autocomplete/results.png" style="height: 60%; width:60%;"/>
+    <img src="/images/AtlasSearch/6-keyword/results.png" style="height: 60%; width:60%;"/>
     
 -------------------------------------------------------------------------------------------------------------------------------------------------------
   
