@@ -16,11 +16,11 @@ Continuing to work off of the cluster we've already built with the dataset we've
 
 1. Create a new index on the `sample_mflix.movies` namespace titled `phrase`. 
 
-      <img src="/images/AtlasSearch/6-keyword/index-config1.png" style="height: 40%; width:40%;"/>
+      <img src="/images/AtlasSearch/7-phrase/index-config1.png" style="height: 40%; width:40%;"/>
       
 2. Phrase doesn't need a special index configuration, so a default dynamic index will do. For good practice though we'll refine our index against just the `title` field. 
   
-    <img src="/images/AtlasSearch/6-keyword/field-mappings.png" style="height: 40%; width:40%;"/>
+    <img src="/images/AtlasSearch/7-phrase/field-mappings.png" style="height: 40%; width:40%;"/>
     
 ### Creating the Phrase Aggregation
 
@@ -42,7 +42,7 @@ Continuing to work off of the cluster we've already built with the dataset we've
       }
      ```
     
-    <img src="/images/AtlasSearch/6-keyword/searchStage.png" style="height: 40%; width:40%;"/>
+    <img src="/images/AtlasSearch/7-phrase/searchStage.png" style="height: 40%; width:40%;"/>
     
 2. The next stage we'll use is `$project` to cleanup our payload. 
 
@@ -56,11 +56,11 @@ Continuing to work off of the cluster we've already built with the dataset we've
       }
     ```
     
-    <img src="/images/AtlasSearch/6-keyword/projectStage.png" style="height: 40%; width:40%;"/>
+    <img src="/images/AtlasSearch/7-phrase/projectStage.png" style="height: 40%; width:40%;"/>
     
     Here you'll see we are matching for Harry Potter movies. 
     
-    <img src="/images/AtlasSearch/6-keyword/results.png" style="height: 60%; width:60%;"/>
+    <img src="/images/AtlasSearch/7-phrase/results.png" style="height: 60%; width:60%;"/>
     
     
     
