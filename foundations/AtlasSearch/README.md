@@ -48,9 +48,9 @@ When the client sends a full text search query it will immediately get routed to
 | 5 | [Autocomplete](5-autocomplete/)          | Run real time text inference of token(s) |
 | 6 | [Keyword](6-keyword/)               | Run exact, case-senstive searches of tokens |
 | 7 | [Phrase](foundations/)          | Run searches over ordered sequence of tokens |
-| 8 | [Diacritics](foundations/)          | Run diacritic sensitive or insensitive queries |
+| 8 | [Wildcard](foundations/)          | Enables queries which use special characters in the search string that can match any character |
 | 9 | [Compound](foundations/)          | Run a search that combines two or more operators into a single query (or clause) |
-| 10 | [Explain](foundations/)          | Understand how the mongot (lucene) returns results in order to tune performance |
+| 10| [Explain](foundations/)          | Understand how the mongot (lucene) returns results in order to tune performance |
 | 11| [Custom Scoring](foundations/)          | Implement custom relevance weights where some fields more important than other fields |
 | 12| [Faceting](foundations/)          | Dynamically cluster search results into categories |
 | 13| [Synonyms](foundations/)          | Search not just for matching tokens, but also for statically mapped tokens (token synonyms) |
