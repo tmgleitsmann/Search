@@ -74,4 +74,8 @@ In this exercise we're going to leverage the same `sample_mflix.movies` dataset,
     Here you'll see we are matching for movies titled with the words `men`, `man`, `women` or `woman`. 
     
     <img src="/images/AtlasSearch/8-wildcard/results.png" style="height: 60%; width:60%;"/>
+    
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+***NOTE***: Think about the scoring for a search like this. The title is just a string, so analyzing each title using the keyword analyzer will result in a single token that we need to match against. Recall that the TF-IDF scoring model requires searched term-frequency in a document, the number of total documents and the number of documents containing our searched term. Wouldn't these all be the same across all matching documents?
 
