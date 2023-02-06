@@ -49,12 +49,12 @@ When the client sends a full text search query it will immediately get routed to
 | 6 | [Keyword](6-keyword/)               | Run exact, case-senstive searches of tokens |
 | 7 | [Phrase](7-phrase/)          | Run searches over ordered sequence of tokens |
 | 8 | [Wildcard](8-wildcard/)          | Enables queries which use special characters in the search string that can match any character |
-| 9 | [Compound](foundations/)          | Run a search that combines two or more operators into a single query (or clause) |
-| 10| [Explain](foundations/)          | Understand how the mongot (lucene) returns results in order to tune performance |
-| 11| [Custom Scoring](foundations/)          | Implement custom relevance weights where some fields more important than other fields |
-| 12| [Faceting](foundations/)          | Dynamically cluster search results into categories |
-| 13| [Synonyms](foundations/)          | Search not just for matching tokens, but also for statically mapped tokens (token synonyms) |
-| 14| [Sorting and Pagination](foundations/)          | Tips and tricks to sort or paginate over a result set quicly |
-| 15| [Cross-Collection Search](foundations/)          | Run text search that spans across multiple collections |
-| 16| [Custom Analyzers](foundations/)          | Build out a customer analyzer rather than selecting one of the default Lucene ones |
-| 17| [Flexible Querying / Index Intersection](foundations/)          | Combine multiple search indexes to perform performant and dynamic queries |
+| 9 | [Compound](9-compoun/)          | Run a search that combines two or more operators into a single query (or clause) |
+| 10| [Explain]       | Understand how the mongot (lucene) returns results in order to tune performance |
+| 11| [Custom Scoring]         | Implement custom relevance weights where some fields more important than other fields |
+| 12| [Faceting]        | Dynamically cluster search results into categories |
+| 13| [Synonyms]       | Search not just for matching tokens, but also for statically mapped tokens (token synonyms) |
+| 14| [Sorting and Pagination]       | Tips and tricks to sort or paginate over a result set quicly |
+| 15| [Cross-Collection Search]         | Run text search that spans across multiple collections |
+| 16| [Custom Analyzers]         | Build out a customer analyzer rather than selecting one of the default Lucene ones |
+| 17| [Flexible Querying / Index Intersection]         | Combine multiple search indexes to perform performant and dynamic queries |
