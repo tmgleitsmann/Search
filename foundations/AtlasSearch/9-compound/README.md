@@ -76,7 +76,7 @@ Follow steps 1-3 under [*Configure Atlas Search Index*](/foundations/AtlasSearch
     
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Here you'll see the results we match against. One thing to note is the score is the same for a lot of documents. What we'll be exploring later is custom scoring for these different query clauses to ensure we're scoring the most relevant documents the highest. 
+Here you'll see the results we match against. One thing to note is the score is the same for a lot of documents. The title scoring is just as influential as the plot scoring with this query and we may not want that to be the case. What we'll be exploring later is custom scoring for these different query clauses to ensure we're scoring the most relevant documents the highest. 
     
 <img src="/images/AtlasSearch/9-compound/results.png" style="height: 70%; width:70%;"/>
     
