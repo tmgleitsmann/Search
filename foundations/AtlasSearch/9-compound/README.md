@@ -56,7 +56,7 @@ Follow steps 1-3 under [*Configure Atlas Search Index*](/foundations/AtlasSearch
       }
     }
     ```
-    <img src="/images/AtlasSearch/9-compound/searchStage.png" style="height: 40%; width:40%;"/>
+    <img src="/images/AtlasSearch/9-compound/searchStage.png" style="height: 50%; width:50%;"/>
     
 2. The next stage we'll use is `$project` to cleanup our payload. 
 
@@ -72,9 +72,11 @@ Follow steps 1-3 under [*Configure Atlas Search Index*](/foundations/AtlasSearch
     ```
     
     
-    <img src="/images/AtlasSearch/9-compound/projectStage.png" style="height: 40%; width:40%;"/>
+    <img src="/images/AtlasSearch/9-compound/projectStage.png" style="height: 50%; width:50%;"/>
     
-    Here you'll see the results we match against. One thing to note is the score is the same for a lot of documents. What we'll be exploring later is custom scoring for these different query clauses to ensure we're scoring the most relevant documents the highest. 
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Here you'll see the results we match against. One thing to note is the score is the same for a lot of documents. What we'll be exploring later is custom scoring for these different query clauses to ensure we're scoring the most relevant documents the highest. 
     
-    <img src="/images/AtlasSearch/9-compound/results.png" style="height: 70%; width:70%;"/>
+<img src="/images/AtlasSearch/9-compound/results.png" style="height: 70%; width:70%;"/>
     
