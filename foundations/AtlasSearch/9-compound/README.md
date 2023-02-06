@@ -66,13 +66,15 @@ Follow steps 1-3 under [*Configure Atlas Search Index*](/foundations/AtlasSearch
         "$project":{
           "title":1,
           "plot":1,
-          "score":{$meta:"searchScore"}
+          "score":{"$meta":"searchScore"}
         }
       }
     ```
     
     
-    <img src="/images/AtlasSearch/8-wildcard/projectStage.png" style="height: 40%; width:40%;"/>
+    <img src="/images/AtlasSearch/9-compound/projectStage.png" style="height: 40%; width:40%;"/>
     
+    Here you'll see the results we match against. One thing to note is the score is the same for a lot of documents. What we'll be exploring later is custom scoring for these different query clauses to ensure we're scoring the most relevant documents the highest. 
     
+    <img src="/images/AtlasSearch/9-compound/results.png" style="height: 60%; width:60%;"/>
     
