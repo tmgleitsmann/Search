@@ -76,5 +76,5 @@ Follow steps 1-3 under [*Configure Atlas Search Index*](/foundations/AtlasSearch
     
     Here you'll see the results we match against. One thing to note is the score is the same for a lot of documents. What we'll be exploring later is custom scoring for these different query clauses to ensure we're scoring the most relevant documents the highest. 
     
-    <img src="/images/AtlasSearch/9-compound/results.png" style="height: 60%; width:60%;"/>
+    <img src="/images/AtlasSearch/9-compound/results.png" style="height: 70%; width:70%;"/>
     
