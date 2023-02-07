@@ -1,3 +1,5 @@
+# Compound Queries in MongoDB Atlas Search
+
 Recall that Lucene will create a query tree, comprised of potentially many different query objects (ie. term query, wildcard query, fuzzy query, etc.) before evaluating the query and scoring. What the `compound` operator allows us to do is create these more complex trees and then combine the operations of each leaf node while traversing up the tree. 
 
 <img src="/images/Lucene/queryTree.png" style="height: 70%; width:70%;"/>
