@@ -26,11 +26,11 @@ In the diagram above you can see the different types of [Lucene Query Objects](h
 
 
 The plan will include
-path: path to the clause
-type: name of the lucene query that the operator created
-analyzer: the search analyzer used with the query if specified
-args: the arguments passed into the operator
-stats: explain timing breakdown
+- path: path to the clause
+- type: name of the [lucene query](https://www.mongodb.com/docs/atlas/atlas-search/explain-lucene-query/#std-label-explain-lucene-query) that the operator created
+- analyzer: the search analyzer used with the query if specified
+- args: the arguments passed into the operator
+- stats: explain timing breakdown
 
 If we ever need to understand ***HOW*** our query is being execute or where specifically within the query it might be bottlenecked, 
 we can use an explain plan to gain insight. 
