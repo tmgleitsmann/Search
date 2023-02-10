@@ -80,7 +80,7 @@ Using the index and aggregation we created in [lesson 9](/foundations/AtlasSearc
        <img src="/images/AtlasSearch/11-scoring/gauss-diagram.png" style="height: 50%; width:50%;"/>
   - Path Expressions: Utilize the value within a path
   - Score Expressions: Represents the relevance score, is the same as the current score of the document (default scoring)
-  - Unary Expressions: Expression taking a single argument. Today you can use this to find the `lo10(x)` or `log10(x+1)` of a specified x.
+  - Unary Expressions: Expression taking a single argument. Today you can use this to find the `log10(x)` or `log10(x+1)` of a specified x.
         <img src="/images/AtlasSearch/11-scoring/log10.png" style="height: 50%; width:50%;"/> 
 
     
