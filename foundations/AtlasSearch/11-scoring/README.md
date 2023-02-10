@@ -132,15 +132,73 @@ Using the index and aggregation we created in [lesson 9](/foundations/AtlasSearc
     ```
 
 
-    ### Function
+    ### Gaussian
+    
+    Now if we want our score to increasingly decay as a value gets further and further away from a particular point we can use `gauss` to define an origin point, scale, offset and decay factor
+    - origin: Point of origin from which to calculate the distance.
+    - scale: Distance from origin plus or minus (±) offset at which scores must be multiplied
+    - offset: Number to use to determine the distance from origin. The decay operation is performed only for documents whose distances are greater than origin plus or minus (±) offset. If ommitted, defaults to 0.
+    - decay: Rate at which you want to multiply the scores. Value must be a positive number between 0 and 1 exclusive
 
 
+    We're going to select an origin of 10, since that's the highest a movie can be scored. From there we're going to include an offset of 1 as to not penalize movies that are rated between 9 and 10. From there we will define the scale factor to be 2 in which this will be the multiplication factor in which we decay at a value of .7. 
 
+    ```json
+    {
+        "compound": {
+          "must":[{
+            "text":{
+              "query":"wolf",
+              "path":"title",
+              "score": {
+                "function":{
+                  "gauss": {
+                    "path": {
+                      "value": "imdb.rating",
+                      "undefined": 4.6
+                    },
+                    "origin": 10,
+                    "scale": 2,
+                    "offset": 1,
+                    "decay": 0.7
+                  }
+                }
+              }
+            }
+          }]
+        }
+     }
+     ```
 
-
-
-
-
+   Change the constant value in the `should` clause to be `0`. Now look at how the gaussian scoring impacts the result set. We will see that movies that      include wolf and have a higher rating are favored, and their relevance tapers off in an almost exponentially decaying manner as the imdb ratings go        down.
+   
+   
+   ### Path
+   
+   This option will replace the relevant score with a value provided by the path. So for example, if we wanted to toss the default relevance score and use the imdb rating of the movie we can do this:
+   
+   ```json
+   {
+        "compound": {
+          "must":[{
+            "text":{
+              "query":"wolf",
+              "path":"title",
+              "score": {
+                "function":{
+                  "path": {
+                    "value": "imdb.rating",
+                    "undefined": 4
+                  }
+                }
+              }
+            }
+          }]
+        }
+     } 
+   ```
+   
+   ### Unary
 
 
 
