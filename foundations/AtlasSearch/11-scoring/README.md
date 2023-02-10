@@ -70,4 +70,11 @@ Using the index and aggregation we created in [lesson 9](/foundations/AtlasSearc
   
   ## Function Example 
   
-  
+  You have a plethora of different options when it comes to building out function scores. 
+
+  - Arithmetic Expressions: Add or multiply a series of numbers
+  - Constant Expressions: Allow a constant number in the function score
+  - Gaussian Decay Expressions: Reduces the score by multiplying at a specified rate. The Gauss function is a bell shape that decays slowly, then rapidly, then slowly. 
+  - Path Expressions: Utilize the value within a path
+  - Score Expressions: Represents the relevance score, is the same as the current score of the document
+  - Unary Expressions: Expression taking a single argument. Today you can use this to find the `lo10(x)` or `log10(x+1)` of a specified x. 
