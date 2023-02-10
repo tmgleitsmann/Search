@@ -72,9 +72,76 @@ Using the index and aggregation we created in [lesson 9](/foundations/AtlasSearc
   
   You have a plethora of different options when it comes to building out function scores. 
 
-  - Arithmetic Expressions: Add or multiply a series of numbers
+  - Arithmetic Expressions: Add or multiply an array of expressions
   - Constant Expressions: Allow a constant number in the function score
-  - Gaussian Decay Expressions: Reduces the score by multiplying at a specified rate. The Gauss function is a bell shape that decays slowly, then rapidly, then slowly. 
+  - Gaussian Decay Expressions: Reduces the score by multiplying at a specified rate. The Gauss function is a bell shape that decays slowly, then rapidly,      then slowly. 
+
+       <img src="/images/AtlasSearch/11-scoring/gauss-decay-expression.png" style="height: 50%; width:50%;"/>
+       <img src="/images/AtlasSearch/11-scoring/gauss-diagram.png" style="height: 50%; width:50%;"/>
   - Path Expressions: Utilize the value within a path
-  - Score Expressions: Represents the relevance score, is the same as the current score of the document
-  - Unary Expressions: Expression taking a single argument. Today you can use this to find the `lo10(x)` or `log10(x+1)` of a specified x. 
+  - Score Expressions: Represents the relevance score, is the same as the current score of the document (default scoring)
+  - Unary Expressions: Expression taking a single argument. Today you can use this to find the `lo10(x)` or `log10(x+1)` of a specified x.
+        <img src="/images/AtlasSearch/11-scoring/log10.png" style="height: 50%; width:50%;"/> 
+
+    
+    ### Arithmetic
+    Let's adjust our scoring against the `title` field to multiply against the imdb rating of the movie. This way, not only will we favor movies with matching tokens in the `title`, but we'll also be favoring GOOD movies. 
+    
+    ```json
+    {
+        "compound": {
+          "must":[{
+            "text":{
+              "query":"wolf",
+              "path":"title",
+              "score": { 
+                "function": {
+                  "multiply": [{
+                    "path": {
+                      "value": "imdb.rating",
+                      "undefined": 2
+                    }
+                  },
+                  {
+                    "score": "relevance"
+                  }] 
+                } 
+              }
+            }
+          }]
+        }
+     }
+     ```
+
+    ### Constant
+    
+    We got a taste for this sort of operation above in the ***Constant Example*** but if we wanted to accomplish this within function scoring it would look like this. 
+
+    ```json
+    {
+        "compound": {
+          "should":[{
+            "text":{
+              "query":"wolf",
+              "path":"plot",
+              "score": { "function": { "constant": 1 } }
+            }
+          }]
+        }
+    }
+    ```
+
+
+    ### Function
+
+
+
+
+
+
+
+
+
+
+
+ref: https://www.elastic.co/guide/en/elasticsearch/guide/current/decay-functions.html
