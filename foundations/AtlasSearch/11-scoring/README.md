@@ -64,3 +64,10 @@ Using the index and aggregation we created in [lesson 9](/foundations/AtlasSearc
     }
  ```
  
+ You should see that the documents in the result set with the highest scores are ones with Wolf and ONLY Wolf in the `title`. It is irrespective of `plot` because we effectively buried the score associated with the `plot` field. 
+ 
+  ## Embedded Example  - TODO (no embedded fields in the sample_mflix dataset)
+  
+  ## Function Example 
+  
+  
