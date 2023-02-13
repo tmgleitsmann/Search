@@ -51,7 +51,7 @@ When the client sends a full text search query it will immediately get routed to
 | 8 | [Wildcard](8-wildcard/)          | Enables queries which use special characters in the search string that can match any character |
 | 9 | [Compound](9-compound/)          | Run a search that combines two or more operators into a single query (or clause) |
 | 10| [Explain](10-explain)       | Understand how the mongot (lucene) returns results in order to tune performance |
-| 11| [Custom Scoring]         | Implement custom relevance weights where some fields more important than other fields |
+| 11| [Custom Scoring](11-scoring)         | Implement custom relevance weights where some fields more important than other fields |
 | 12| [Faceting]        | Dynamically cluster search results into categories |
 | 13| [Synonyms]       | Search not just for matching tokens, but also for statically mapped tokens (token synonyms) |
 | 14| [Sorting and Pagination]       | Tips and tricks to sort or paginate over a result set quicly |
