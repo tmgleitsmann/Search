@@ -199,7 +199,28 @@ Using the index and aggregation we created in [lesson 9](/foundations/AtlasSearc
    ```
    
    ### Unary
+   This option will allow for us to take either the `log10(x)` or `log10(x+1)` of a particular value set as the relevance score. 
+   
+   ```json
+   "text": {
+      "path": "title",
+      "query": "men",
+      "score": {
+        "function": {
+          "log": {
+            "path": {
+              "value": "imdb.rating",
+              "undefined": 10
+            }
+          }
+        }
+      }
+    }
+  ```
 
 
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ref: https://www.elastic.co/guide/en/elasticsearch/guide/current/decay-functions.html
