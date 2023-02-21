@@ -135,7 +135,7 @@ This is an index definition that will allow us to query against Name, Club, Coun
 
 <img src="/images/AtlasSearch/12-facet/searchMeta.png" style="height: 35%; width:35%;"/>
 
-You'll see within the `operator` operator we are defining how we want to QUERY the players. This will look no different than how we would define a standard `search` aggregation. 
+You'll see within the `operator` operator we are defining how we want to QUERY the players. This will look no different than how we would define a standard `search` aggregation. In this case we just want to query for players that play for Arsenal with at least an overall score of 80. 
 
 Once we get down to the `facets` operator however, we'll want to define how/where we categorize the players we just queried for. In this example, we will be creating buckets for `country`, `club`, and `position` where they each will have a defined maximum number of buckets. 
 
