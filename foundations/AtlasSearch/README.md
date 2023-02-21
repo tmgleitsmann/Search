@@ -52,7 +52,7 @@ When the client sends a full text search query it will immediately get routed to
 | 9 | [Compound](9-compound/)          | Run a search that combines two or more operators into a single query (or clause) |
 | 10| [Explain](10-explain)       | Understand how the mongot (lucene) returns results in order to tune performance |
 | 11| [Custom Scoring](11-scoring)         | Implement custom relevance weights where some fields more important than other fields |
-| 12| [Faceting]        | Dynamically cluster search results into categories |
+| 12| [Faceting](12-facet)        | Dynamically cluster search results into categories |
 | 13| [Synonyms]       | Search not just for matching tokens, but also for statically mapped tokens (token synonyms) |
 | 14| [Sorting and Pagination]       | Tips and tricks to sort or paginate over a result set quicly |
 | 15| [Cross-Collection Search]         | Run text search that spans across multiple collections |
