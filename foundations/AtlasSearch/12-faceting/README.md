@@ -85,6 +85,49 @@ This is an index definition that will allow us to query against Name, Club, Coun
 
 <img src="/images/AtlasSearch/12-facet/index2.png" style="height: 50%; width:50%;"/>
 
+```json
+{
+  "mappings": {
+    "dynamic": false,
+    "fields": {
+      "Club": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "stringFacet"
+        }
+      ],
+      "Country": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "stringFacet"
+        }
+      ],
+      "Name": {
+        "type": "string"
+      },
+      "Overall": {
+        "representation": "int64",
+        "type": "number"
+      },
+      "Position": [
+        {
+          "analyzer": "lucene.keyword",
+          "searchAnalyzer": "lucene.keyword",
+          "type": "string"
+        },
+        {
+          "type": "stringFacet"
+        }
+      ]
+    }
+  }
+}
+```
+
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
