@@ -42,12 +42,17 @@ You can use facet with both the `$search` and `$searchMeta` stages. MongoDB reco
 
 Attached to this repository is a `players2020.bson` file. It contains the Fifa 20 players dataset that we will want to load into a cluster before building out our faceted search. 
 
-1. Download and `mongorestore` the dataset. 
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### 1. Download and `mongorestore` the dataset. 
 
 ```console
 mongorestore --drop -d players2020 -c players <Path/To/Dataset> --uri mongodb+srv://<username>:<password>@search.yimh2.mongodb.net
 ```
-2. Once our dataset is loaded, lets create a search index for it. We'll need to include index definitions for the fields we want to facet against as well as the fields we want to search against. 
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### 2. Once our dataset is loaded, lets create a search index for it. We'll need to include index definitions for the fields we want to facet against as well as the fields we want to search against. 
 
 > We will want to search against the player name and filter against the position, club, country and overall rating for the player. 
 > Additionally, we will want to facet against the club, country and position. 
@@ -81,7 +86,9 @@ This is an index definition that will allow us to query against Name, Club, Coun
 <img src="/images/AtlasSearch/12-facet/index2.png" style="height: 50%; width:50%;"/>
 
 
-3. Navigate to the `Aggregation` tab within `Collections>Players2020>Players` namespace in the Atlas UI. Lets build out the `$searchMeta` aggregation.
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### 3. Navigate to the `Aggregation` tab within `Collections>Players2020>Players` namespace in the Atlas UI. Lets build out the `$searchMeta` aggregation.
 
 <img src="/images/AtlasSearch/12-facet/searchMeta.png" style="height: 35%; width:35%;"/>
 
