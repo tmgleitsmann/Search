@@ -217,3 +217,6 @@ In this example we only had `StringFacets` to work with, however you can also cr
   }
 }
 ```
+
+
+**Pro-tip**: To simulatenously facet for the result set AND the facets you can setup a custom resolver within App Services GraphQL on Atlas to run both sets of aggregations when hitting a single GraphQL endpoint. This avoids sending two separate calls and two separate network round trips. 
