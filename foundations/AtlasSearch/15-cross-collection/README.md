@@ -80,6 +80,9 @@ Because of that these next two exercises will demonstrate how to build those out
      
  ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
+## Cross Collection Search with $unionWith
+
+
 
 
 
