@@ -54,7 +54,7 @@ When the client sends a full text search query it will immediately get routed to
 | 11| [Custom Scoring](11-scoring)         | Implement custom relevance weights where some fields more important than other fields |
 | 12| [Faceting](12-faceting)        | Dynamically cluster search results into categories |
 | 13| [Synonyms](13-synonyms)        | Search not just for matching tokens, but also for statically mapped tokens (token synonyms) |
-| 14| [Sorting and Pagination]       | Tips and tricks to sort or paginate over a result set quicly |
+| 14| [Sorting and Pagination](14-sorting-and-pagination)       | Tips and tricks to sort or paginate over a result set quicly |
 | 15| [Cross-Collection Search]         | Run text search that spans across multiple collections |
 | 16| [Custom Analyzers]         | Build out a customer analyzer rather than selecting one of the default Lucene ones |
 | 17| [Flexible Querying / Index Intersection]         | Combine multiple search indexes to perform performant and dynamic queries |
