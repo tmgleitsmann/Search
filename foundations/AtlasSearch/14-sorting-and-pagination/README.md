@@ -3,7 +3,7 @@
 This repo is prone to change: The current implementation of pagination is functional but not ideal for particular scenarios where customers need deep pagination at lower latency. 
 Faster pagination is something currently [in the works](https://feedback.mongodb.com/forums/924868-atlas-search/suggestions/41075920-faster-pagination). 
 
-Additionally, Lucene based sort is in the works and is in beta currently. Once we have an update I will be sure to update this repository. 
+Additionally, ***Lucene based sort is in the works and is in beta currently.*** Once we have an update I will be sure to update this repository. 
 The functionality for sort is pretty self explanatory though. Currently, Lucene returns documents sorted in terms of relevancy, 
 however what if we want the relevant documents sorted by a different order? 
 
