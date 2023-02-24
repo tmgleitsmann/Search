@@ -76,7 +76,7 @@ Because of that these next two exercises will demonstrate how to build those out
   4. Evaluate the result set. You'll now see we have the account purchases embedded within the corresponding customer's document, 
      and that each purchase object has `CurrencyService` and `InvestmentStock`.
      
-     <img src="/images/AtlasSearch/15-cross-collection/lookupresult.png" style="height: 50%; width:50%;"/>
+     <img src="/images/AtlasSearch/15-cross-collection/lookupresult.png" style="height: 35%; width:35%;"/>
      
  ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
