@@ -82,7 +82,75 @@ Because of that these next two exercises will demonstrate how to build those out
 
 ## Cross Collection Search with $unionWith
 
+1. Using the sample dataset, create a default search index against the `sample_training.companies` and `sample_training.inspections` namespaces.
+
+companies 
+<img src="/images/AtlasSearch/15-cross-collection/companies.png" style="height: 50%; width:50%;"/>
+
+inspections
+<img src="/images/AtlasSearch/15-cross-collection/inspections.png" style="height: 50%; width:50%;"/>
+
+2. Navigate to the `collections` tab and then to the `sample_training.companies` namespace and create an aggregation. 
+3. Build out the aggregation. We’ll want to union data into the companies collection from the inspections collection. For the `companies` collection, we'll want to search for companies that include *mobile* in the name. For the `inspections` collection, we'll want to accomplish the same thing, however instead of searching for the term *mobile* on the `name` field, it will be on the `business_name` field. 
+    - The first `$search` stage, we'll want to perform the search for the term *mobile* against the `name` path. 
+    - So we can keep track of which collection a matched document originated from, we're going to add a `$set` stage and set a new `source` field to *companies*
+    - For readability, let's `$project` just the `name` and the `source` fields. 
+    - Now that we're done with the companies data, let's perform the `$unionWith` operation against the inspections collection. We'll embed the `pipeline` operator of the stage with a `$search` for *Mobile* against the path *business_name*, then we'll `$set` the `source` field to *inspections*, and then lastly we'll project out `name` and `business_name` for readability. 
+
+
+<img src="/images/AtlasSearch/15-cross-collection/unionSearchStage.png" style="height: 50%; width:50%;"/>
+<img src="/images/AtlasSearch/15-cross-collection/unionSetStage.png" style="height: 50%; width:50%;"/>
+<img src="/images/AtlasSearch/15-cross-collection/unionProjectStage.png" style="height: 50%; width:50%;"/>
+<img src="/images/AtlasSearch/15-cross-collection/unionWithStage.png" style="height: 50%; width:50%;"/>
 
 
 
+```json
+[{
+ "$search": {
+  "index": "default",
+  "text": {
+   "query": "Mobile",
+   "path": "name"
+  }
+ }
+}, {
+ "$set": {
+  "source": "companies"
+ }
+}, {
+ "$project": {
+  "_id": 0,
+  "name": 1,
+  "source": 1
+ }
+}, {
+ "$unionWith": {
+  "coll": "inspections",
+  "pipeline": [
+   {
+    "$search": {
+     "text": {
+      "query": "Mobile",
+      "path": "business_name"
+     }
+    }
+   },
+   {
+    "$set": {
+     "source": "inspections"
+    }
+   },
+   {
+    "$project": {
+     "_id": 0,
+     "business_name": 1,
+     "source": 1
+    }
+   }
+  ]
+ }
+}]
+```
 
+4. Evaluate the result set by adding a final match stage and see what comes up when you match against `source`: *comapnies* vs `source`: *inspections*
