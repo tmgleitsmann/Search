@@ -56,5 +56,5 @@ When the client sends a full text search query it will immediately get routed to
 | 13| [Synonyms](13-synonyms)        | Search not just for matching tokens, but also for statically mapped tokens (token synonyms) |
 | 14| [Sorting and Pagination](14-sorting-and-pagination)       | Tips and tricks to sort or paginate over a result set quicly |
 | 15| [Cross-Collection Search](15-cross-collection)         | Run text search that spans across multiple collections |
-| 16| [Custom Analyzers]         | Build out a customer analyzer rather than selecting one of the default Lucene ones |
+| 16| [Custom Analyzers](16-custom-analyzers)         | Build out a customer analyzer rather than selecting one of the default Lucene ones |
 | 17| [Flexible Querying / Index Intersection]         | Combine multiple search indexes to perform performant and dynamic queries |
