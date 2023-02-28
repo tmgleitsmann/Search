@@ -218,7 +218,7 @@ After tokenizing, is there anything else that we'll need to filter for? Once we 
 
 Create the following index using the JSON Editor in the Search tab of the MongoDB Atlas UI. The namespace it should be created on is `custom.minutes`.
 
-<img src="/images/AtlasSearch/16-custom-analyzers/customIndex.png" style="height: 50%; width:50%;"/>
+<img src="/images/AtlasSearch/16-custom-analyzers/customIndex.png" style="height: 80%; width:80%;"/>
 
 Next, navigate to the `collections` tab and create an aggregation in the `custom.minutes` namespace. 
   1. Create a $search stage to match against the number `1234567890` on the `page_updated_by.phone` field.
