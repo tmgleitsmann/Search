@@ -54,3 +54,196 @@ many of which can be applied in conjunction with one another. There are too many
 [stopword](https://www.mongodb.com/docs/atlas/atlas-search/analyzers/token-filters/#stopword), 
 [trim](https://www.mongodb.com/docs/atlas/atlas-search/analyzers/token-filters/#trim), 
 [wordDelimiterGraph](https://www.mongodb.com/docs/atlas/atlas-search/analyzers/token-filters/#worddelimitergraph)
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+For a majority of the indexes we've created, we've used the visual index editor. We can alternatively choose to use the JSON editor and define our analyzers in the following format
+
+```json
+"analyzers": [
+  {
+    "name": "<name>",
+    "charFilters": [ "<list-of-character-filters>" ],
+    "tokenizer": {
+      "type": "<tokenizer-type>"
+    },
+    "tokenFilters": [ "<list-of-token-filters>" ]
+  }
+]
+```
+
+## Exercise
+
+Let’s insert a few documents in the `custom.minutes` namespace to play with. Connect to your cluster from the shell and insert the following four documents. 
+
+```shell
+use custom
+db.minutes.insertMany(
+[
+  {
+    "_id": 1,
+    "page_updated_by": {
+      "last_name": "AUERBACH",
+      "first_name": "Siân",
+      "email": "auerbach@example.com",
+      "phone": "(123)-456-7890"
+    },
+    "title": "The team's weekly meeting",
+    "message": "try to siGn-In",
+    "text": {
+      "en_US": "<head> This page deals with department meetings. </head>"
+    }
+  },
+  {
+    "_id": 2,
+    "page_updated_by": {
+      "last_name": "OHRBACH",
+      "first_name": "Noël",
+      "email": "ohrbach@example.com",
+      "phone": "(123) 456 0987"
+    },
+    "title": "The check-in with sales team",
+    "message": "do not forget to SIGN-IN",
+    "text" : {
+      "en_US": "The head of the sales department spoke first.",
+      "fa_IR": "ابتدا رئیس بخش فروش صحبت کرد"
+    }
+  },
+  {
+    "_id": 3,
+    "page_updated_by": {
+      "last_name": "LEWINSKY",
+      "first_name": "Brièle",
+      "email": "lewinsky@example.com",
+      "phone": "(123).456.9870"
+    },
+    "title": "The regular board meeting",
+    "message": "try to sign-in",
+    "text" : {
+      "en_US": "<body>We'll head out to the conference room by noon.</body>"
+    }
+  },
+      {
+    "_id": 4,
+    "page_updated_by": {
+      "last_name": "LEVINSKI",
+      "first_name": "François",
+      "email": "levinski@example.com",
+      "phone": "123-456-8907"
+    },
+    "title": "The daily huddle on StandUpApp2",
+    "message": "write down your signature or phone №",
+    "text" : {
+      "en_US": "<body>This page has been updated with the items on the agenda.</body>" ,
+      "es_MX": "La página ha sido actualizada con los puntos de la agenda.",
+      "pl_PL": "Strona została zaktualizowana o punkty porządku obrad."
+    }
+  }
+])
+```
+
+Notice how the phone numbers are not standardized. They have "-", "(", ")", ".", and " " in and around the numbers. 
+If we wanted to create an index to support the search of a phone number, we might want to introduce a mapping character filter followed by a keyword tokenizer on the `phone` field. 
+
+### 1. First let's setup our Lucene field mappings 
+(This is NOT character mapping for the character filter). We're just specifying where in the docoument we want to index against, with what analyzer, and the data type that `phone` is. 
+
+```json
+  "mappings": {
+    "fields": {
+      "page_updated_by": {
+        "fields": {
+          "phone": {
+            "analyzer": "mappingAnalyzer",
+            "type": "string"
+          }
+        },
+        "type": "document"
+      }
+    }
+  }
+```
+
+### 2. Next, let's setup the analyzer portion of the index.
+We will first start off with defining the character filter - *mapping*
+Then, we will define the tokenizer. Since we will want to query against the phone number as if it were a keyword, we will use the `keyword` tokenizer.
+After tokenizing, is there anything else that we'll need to filter for? Once we have the *pure* number, we can index it as is. There is no need for a token filter. 
+
+- name the analyzer, `mappingAnalyzer`
+- map the following characters blank
+  - "-", "(", ")", ".", " "
+- set the tokenizer to `keyword`
+
+```json
+{
+  "mappings": {
+    "fields": {
+      "page_updated_by": {
+        "fields": {
+          "phone": {
+            "analyzer": "mappingAnalyzer",
+            "type": "string"
+          }
+        },
+        "type": "document"
+      }
+    }
+  },
+  "analyzers": [
+    {
+      "name": "mappingAnalyzer",
+      "charFilters": [
+        {
+          "mappings": {
+            "-": "",
+            ".": "",
+            "(": "",
+            ")": "",
+            " ": ""
+          },
+          "type": "mapping"
+        }
+      ],
+      "tokenizer": {
+        "type": "keyword"
+      }
+    }
+  ]
+}
+```
+
+### 3. Now let's Create and Test the Index
+
+Create the following index using the JSON Editor in the Search tab of the MongoDB Atlas UI. The namespace it should be created on is `custom.minutes`.
+
+<img src="/images/AtlasSearch/16-custom-analyzers/customIndex.png" style="height: 50%; width:50%;"/>
+
+Next, navigate to the `collections` tab and create an aggregation in the `custom.minutes` namespace. 
+  1. Create a $search stage to match against the number `1234567890` on the `page_updated_by.phone` field.
+  2. Project only the number for visibility. 
+  
+  ```json
+  [{
+   "$search": {
+    "index": "default",
+    "text": {
+     "query": "1234567890",
+     "path": "page_updated_by.phone"
+    }
+   }
+  }, {
+   "$project": {
+    "phone": "$page_updated_by.phone"
+   }
+  }]
+  ```
+  
+  <img src="/images/AtlasSearch/16-custom-analyzers/aggregation.png" style="height: 50%; width:50%;"/>
+
+  The result should be pretty straightforward. We are returning the original contents of the documents we matched against. 
+  
+  <img src="/images/AtlasSearch/16-custom-analyzers/result.png" style="height: 50%; width:50%;"/>
+
+
