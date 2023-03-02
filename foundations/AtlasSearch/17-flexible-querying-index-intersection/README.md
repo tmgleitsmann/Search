@@ -107,7 +107,7 @@ satisfying those queries.
 
 ### ***QUESTION***: How do you think this result set changes if we analyzed with the `keyword` analyzer rather than the `standard`?
 
-Revisit the index and modify the definition to analyze the title field with `keyword`. When running the same aggregation your result set should change to this:
+Revisit the index and modify the definition to analyze the `title` field with `lucene.keyword` as shown below. When running the same aggregation your result set should change to this:
 
 ```json
 {
