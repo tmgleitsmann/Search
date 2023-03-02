@@ -97,7 +97,7 @@ Let's add a second stage after the `$search` that projects only the title and th
 ```
 ***RESULTS***
 
-<img src="/images/AtlasSearch/17-flexible-querying-index-intersection/results.png" style="height: 50%; width:50%;"/>
+<img src="/images/AtlasSearch/17-flexible-querying-index-intersection/results.png" style="height: 75%; width:75%;"/>
 
 
 What's even better about this access pattern is that if our queries were to evolve to also incorporate cast memebers and ratings, our index is still capable of
