@@ -29,7 +29,48 @@ Atlas Search uses the `knnBeta` operator to perform vector search. It has the fo
 
 # Exercise
 
+1. With an Atlas cluster already provisioned, load in the sample data in this repository.
+
+    Navigate inside the data directory and run the following command. This will concatenate all the json files before before performing a mongoimport into 
+    the `vector_search_db.responses` namespace. We'll be loading in sample "talk" data where the contents have already been converted into a vector. 
+
+    ```shell
+    cat *.json | mongoimport --uri "{clusterURL}" -u {user} -p {password} --db vector_search_db --collection responses
+    ```
+
+    The documents you load should all look more or less like this. Note the `vector` field contains *384 embeddings*. 
+
+    <img src="/images/AtlasSearch/17-flexible-querying-index-intersection/result.png" style="height: 50%; width:50%;"/>
+  
+2. Now that our data is successfully loaded, let's create the Search Index. 
+
+    Navigate to the *Search* tab and create an index using the JSON Editor. We will want to create an index against that vector field with
+      - dimensions: 384 (this is representative of the number of embeddings within our vector array)
+      - similarity: we'll use cosine similarity for this example
+      - type: knnVector 
 
 
+    ```json
+      {
+        "mappings": {
+          "fields": {
+            "vector": [
+              {
+                "dimensions": 384,
+                "similarity": "cosine",
+                "type": "knnVector"
+              }
+            ]
+          }
+        }
+      }
+    ```
+    
+    <img src="/images/AtlasSearch/17-flexible-querying-index-intersection/result.png" style="height: 50%; width:50%;"/>
+    
+3. The last thing to do is query against our data. 
+    Now since we are using vector search, we'll need to convert our query into a vector. Since I'm not providing you with the means to do so in this    README, I'll just provide you the sample query to keep things simple. 
+    
+    
 
 [Hierachical Navigable Small Worlds Resource](https://www.pinecone.io/learn/hnsw/)
