@@ -114,7 +114,7 @@ The same goes with the query "doctor", except in this case we are matching again
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Contributors: 
-[Russell Epstien](https://github.com/russ26)
+[Russell Epstein](https://github.com/russ26)
 
 additional references: 
 
