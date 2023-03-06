@@ -40,7 +40,7 @@ Atlas Search uses the `knnBeta` operator to perform vector search. It has the fo
 
     The documents you load should all look more or less like this. Note the `vector` field contains *384 embeddings*. 
 
-    <img src="/images/AtlasSearch/17-flexible-querying-index-intersection/result.png" style="height: 50%; width:50%;"/>
+    <img src="/images/VectorSearch/AtlasVectorSearch/vector_doc.png" style="height: 50%; width:50%;"/>
   
 2. Now that our data is successfully loaded, let's create the Search Index. 
 
@@ -66,7 +66,7 @@ Atlas Search uses the `knnBeta` operator to perform vector search. It has the fo
       }
     ```
     
-    <img src="/images/AtlasSearch/17-flexible-querying-index-intersection/result.png" style="height: 50%; width:50%;"/>
+    <img src="/images/VectorSearch/AtlasVectorSearch/index.png" style="height: 50%; width:50%;"/>
     
 3. The last thing to do is query against our data. 
     Now since we are using vector search, we'll need to convert our query into a vector. Since I'm not providing you with the means to do so in this    README, I'll just provide you the sample query to keep things simple. 
