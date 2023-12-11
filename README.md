@@ -9,9 +9,9 @@ The purpose behind this repository is to teach everything a Solutions Architect 
 | 1 | [Native MongoDB Text Search](foundations/MDB-Text-Search/)  | How does text search work today using text indexes and $text/ $regex in MongoDB? |
 | 2 | [What is Full Text Search - Lucene](foundations/Lucene)     | How can we make our text indexes smarter and more efficient?|
 | 3 | [Competitive Offerings](foundations/Competitive-Offerings)  | What does the competitive landscape around full text search look like? (Hands On) |
-| 3 | [MongoDB Atlas Search Fundamentals](foundations/AtlasSearch)| How does Atlas Search provide full text search capabilities? |
-| 4 | [Vector Search Fundamentals](foundations/VectorSearch)      | What is Vector Search and how does it improve on Full Text Search? |
-| 5 | [Extras]()                                                  | Still want to learn more?
+| 4 | [MongoDB Atlas Search Fundamentals](foundations/AtlasSearch)| How does Atlas Search provide full text search capabilities? |
+| 5 | [Vector Search Fundamentals](foundations/VectorSearch)      | What is Vector Search and how does it improve on Full Text Search? |
+| 6 | [Extras]()                                                  | Still want to learn more?
 
 ## Demos
 MongoDB Atlas Search can satisfy a variety of different Search Use Cases. Ones that are quickly and easily demo-able you can find below
