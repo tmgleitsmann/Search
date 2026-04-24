@@ -16,6 +16,12 @@ A MongoDB Text Index will tokenize and stem the content of the field that is bei
 2. Indexes cannot store phrases or information about proximity of words
 3. Can only have 1 text index per collection
 4. Not effective with case insensitivity searches. Will need to utilize patterns with $regex to achieve case insensitive matches
+5. Regex evaluation can spike CPU usage and slow down the entire cluster
+6. Using "Not" with a regex query almost always results in a collection scan
+7. Leading Wildcards (.* or .+) leads to collection scans since the index has no where to "start"
+  - For $regex, the caret (^) operator is required to avoid scans
+
+
 
 ### $text and $regex for text searches
 - **$text** : The $text operator can search for words and phrases. Query matches on the complete stemmed words.
